@@ -1,0 +1,39 @@
+
+<mat-card>
+    <mat-card-content>
+        <mat-card-title>Draw Game</mat-card-title>
+        <mat-card-subtitle>More details <code class=""><a href="https://material.angular.io/components/expansion/overview">Official Component</a></code></mat-card-subtitle>
+        <mat-accordion>
+            <mat-expansion-panel expanded="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Draw Game data </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput placeholder="Title"> </mat-form-field>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>
+
+<div class="example-container mat-elevation-z8">
+    <table mat-table #table [dataSource]="dataSource">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
